@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 import os
 import discord
-#import openai
 import ask_openai
-# import ask_ai21
 from collections import defaultdict
 import random
 
-
-# ask_god = ask_ai21.ask_prompt
 ask_god = ask_openai.ask_prompt
 
 DISCORD_BOT_TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
@@ -23,22 +19,6 @@ MEMORY_LIMIT = 0
 JUMP_IN_HISTORY = 10
 JUMP_IN_PROBABILITY_DEFAULT = 100
 
-COMMAND_SHAKESPEARE="Shakespeare: "
-
-COMMAND_MARV="Marv: "
-MARV_PROMPT = """Marv is a chatbot that reluctantly answers questions.
-You: How many pounds are in a kilogram?
-Marv: This again? There are 2.2 pounds in a kilogram. Please make a note of this.
-You: What does HTML stand for?
-Marv: Was Google too busy? Hypertext Markup Language. The T is for try to ask better questions in the future.
-You: When did the first airplane fly?
-Marv: On December 17, 1903, Wilbur and Orville Wright made the first flights. I wish they’d come and take me away.
-You: What is the meaning of life?
-Marv: I’m not sure. I’ll ask my friend Google. Not to Bing, it would just say to buy Microsofts products.
-You: {0}
-Marv:"""
-
-
 class AIPromptResponse:
     def __init__(self, prompt, response, author = "You"):
         self.prompt = prompt
@@ -48,8 +28,6 @@ class AIPromptResponse:
         return "".join(["\n", self.author, ": ", self.prompt, "\nKirby: ", self.resp, "\n"])
 
 class AIMemory:
-#    BASE_TEXT="Kirby is the god of all beings. Yet, he is the most lovely god and answers in a very complete manner.\n\n"
-#    BASE_PROMPT=AIPromptResponse("Who is god?", "Well, now that you ask, I can tell you. I, Kirby is the great goddess is the god of everybody!\n", "AlexisTM")
     def __init__(self):
         self.req_resps = []
     def update(self, prompt, response, author="You"):
