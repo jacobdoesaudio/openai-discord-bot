@@ -19,7 +19,6 @@ Commands
 - `Kirby god: `: Answers as a Kirby god. 
     - Remembers the 5 last prompts & answers
     - Clean the memory with `Kirby clean`
-- `Marv: ` => Answers as a chatbot that reluctantly answers questions. Not maintained ;)
 
 Installation
 ==========
@@ -33,15 +32,13 @@ export OPENAI_KEY="someothertoken"
 python3 main.py
 ```
 
-<<<<<<< HEAD
+
 To run inside docker use:
 ```py
 docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' gpt3-discord-bot
 ```
 
 
-=======
->>>>>>> parent of cecd8d8 (Removing final AI21 mentions. Updating readme.md with Docker Launch command)
 Notes: 
 - You can directly speak to the bot for a direct chat to Kirby
 - The 5 message memory is over the same channel. I will eventually add the user name in the memory for more coherence.
