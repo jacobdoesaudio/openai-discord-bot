@@ -17,7 +17,7 @@ COMMAND_PRESENCE="Kirby are you there?"
 
 MEMORY_LIMIT = 0
 JUMP_IN_HISTORY = 10
-JUMP_IN_PROBABILITY_DEFAULT = 100
+JUMP_IN_PROBABILITY_DEFAULT = 15
 
 class AIPromptResponse:
     def __init__(self, prompt, response, author = "You"):
