@@ -24,7 +24,7 @@ Installation
 ==========
 
 ```bash
-git clone https://github.com/jacobdoesaudio/openai-discord-bot.git
+git clone https://github.com/jacobdoesaudio/openai-discord-bot
 cd gpt3-discord-bot
 python3 -m pip install -r requirements.txt --user
 export DISCORD_BOTOKEN="sometoken" 
