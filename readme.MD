@@ -25,17 +25,21 @@ Installation
 
 ```bash
 git clone https://github.com/jacobdoesaudio/openai-discord-bot
-cd gpt3-discord-bot
+cd open-ai-discord-bot
 python3 -m pip install -r requirements.txt --user
-export DISCORD_BOTOKEN="sometoken" 
+export DISCORD_BOT_TOKEN="sometoken" 
 export OPENAI_KEY="someothertoken"
 python3 main.py
 ```
 
 
 To run inside docker use:
+``py
+docker build -t openai-discord-bot .
+``
+
 ```py
-docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' gpt3-discord-bot
+docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' openai-discord-bot
 ```
 
 
