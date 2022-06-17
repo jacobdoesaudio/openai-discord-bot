@@ -34,9 +34,9 @@ python3 main.py
 
 
 To run inside docker use:
-``py
+```py
 docker build -t openai-discord-bot .
-``
+```
 
 ```py
 docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' openai-discord-bot
