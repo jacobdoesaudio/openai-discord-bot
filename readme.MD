@@ -30,6 +30,10 @@ export OPENAI_KEY="someothertoken"
 python3 main.py
 ```
 
+To run inside docker use:
+docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' gpt3-discord-bot
+
+
 Notes: 
 - You can directly speak to the bot for a direct chat to Kirby
 - The 5 message memory is over the same channel. I will eventually add the user name in the memory for more coherence.

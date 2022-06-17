@@ -98,21 +98,6 @@ class MyClient(discord.Client):
             if result != "":
                 last_ai_request[source].update(prompt, result, message.author.name)
                 await message.channel.send('{0}'.format(result))
-        elif data.startswith(COMMAND_SHAKESPEARE):
-            prompt = data[len(COMMAND_SHAKESPEARE):]
-            result = ask_god(prompt, stopSequences=["\n\n\n"])
-            if result != "":
-                await message.channel.send('{0}{1}'.format(prompt, result))
-
-        elif data.startswith(COMMAND_MARV):
-            prompt = ""
-            prompt = data[len(COMMAND_MARV):]
-            ai_prompt = MARV_PROMPT.format(prompt)
-            print('Prompt: {0}'.format(ai_prompt))
-            result = ask_god(ai_prompt, stopSequences=["Marv:", "You:"])
-            if result != "":
-                await message.channel.send('{0}'.format(result))
-
         elif type(message.channel) is discord.DMChannel:
             prompt = data
             ai_prompt = "{0}\nYou: {1}\nKirby:".format(last_ai_request[source].get(), data)
