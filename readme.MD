@@ -31,7 +31,9 @@ python3 main.py
 ```
 
 To run inside docker use:
+```py
 docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' gpt3-discord-bot
+```
 
 
 Notes: 
