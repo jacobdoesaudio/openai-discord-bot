@@ -25,7 +25,7 @@ Installation
 
 ```bash
 git clone https://github.com/jacobdoesaudio/openai-discord-bot
-cd open-ai-discord-bot
+cd openai-discord-bot
 python3 -m pip install -r requirements.txt --user
 export DISCORD_BOT_TOKEN="sometoken" 
 export OPENAI_KEY="someothertoken"
