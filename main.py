@@ -75,7 +75,7 @@ class MyClient(discord.Client):
         else:
             source = "".join(["#", message.channel.name])
 
-        if data.startswith(COMMAND_KIRBY):
+        if data.lower().startswith(COMMAND_KIRBY.lower()):
             prompt = ""
             prompt = data[len(COMMAND_KIRBY):]
             ai_prompt = f"{last_ai_request[source].get()}\nYou: {prompt}\n{DISCORD_BOT_NAME}:"
@@ -85,17 +85,17 @@ class MyClient(discord.Client):
                 last_ai_request[source].update(
                     prompt, result, message.author.name)
                 await message.channel.send('{0}'.format(result))
-        elif data.startswith(COMMAND_ENABLE):
+        elif data.lower().startswith(COMMAND_ENABLE.lower()):
             enabled_channels[hash(message.channel)
                              ] = JUMP_IN_PROBABILITY_DEFAULT
             print(f'{DISCORD_BOT_NAME} enabled for channel {message.channel}')
             await message.channel.send(f"{DISCORD_BOT_NAME} started lurking in this channel.")
-        elif data.startswith(COMMAND_PRESENCE):
+        elif data.lower().startswith(COMMAND_PRESENCE.lower()):
             await message.channel.send("Yes.")
-        elif data.startswith(COMMAND_CLEAN):
+        elif data.lower().startswith(COMMAND_CLEAN.lower()):
             last_ai_request[source].clear()
             await message.channel.send(f"{DISCORD_BOT_NAME} just forgot all about {source}")
-        elif data.startswith(COMMAND_DISABLE):
+        elif data.lower().startswith(COMMAND_DISABLE.lower()):
             if hash(message.channel) in enabled_channels:
                 del enabled_channels[hash(message.channel)]
                 await message.channel.send(f"{DISCORD_BOT_NAME} left this channel.")
