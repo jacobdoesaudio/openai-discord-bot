@@ -9,6 +9,7 @@ This is an OpenAI discord bot replying as Kirby.
 Environment keys:
 - OPENAI_KEY
 - DISCORD_BOT_TOKEN
+- DISCORD_BOT_NAME
 
 Commands
 =============
@@ -26,9 +27,13 @@ Installation
 ```bash
 git clone https://github.com/jacobdoesaudio/openai-discord-bot
 cd openai-discord-bot
+
 python3 -m pip install -r requirements.txt --user
-export DISCORD_BOT_TOKEN="sometoken" 
+
 export OPENAI_KEY="someothertoken"
+export DISCORD_BOT_TOKEN="sometoken" 
+export DISCORD_BOT_NAME="triggerword"
+
 python3 main.py
 ```
 
@@ -39,7 +44,7 @@ docker build -t openai-discord-bot .
 ```
 
 ```bash
-docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' openai-discord-bot
+docker run -e OPENAI_KEY='APIKey' -e DISCORD_BOT_TOKEN='DiscordKey' -e DISCORD_BOT_NAME="triggerword" openai-discord-bot
 ```
 
 
