@@ -9,7 +9,7 @@ import random
 ask_god = ask_openai.ask_prompt
 
 DISCORD_BOT_TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
-DISCORD_BOT_NAME = "Skrillex"
+DISCORD_BOT_NAME = os.environ.get("DISCORD_BOT_NAME")
 
 COMMAND_KIRBY = f"{DISCORD_BOT_NAME} god: "
 COMMAND_ENABLE = f"{DISCORD_BOT_NAME} enable"
